@@ -106,30 +106,30 @@ zero.addEventListener('click', () => {
 })
 
 abs.addEventListener('click', () => {
-  const inputValue = input.value.trim(); // очищаем пробелы
+  const inputValue = input.value.trim(); // Очищаем пробелы
 
-  if (inputValue === '' || inputValue === 'Ошибка') return; // пропускаем пустые поля или ошибку
+  if (inputValue === '' || inputValue === 'Ошибка') return; // Пропускаем пустое поле или ошибку
 
-  let lastNumberIndex = inputValue.search(/[\d.-]+$/); // находим индекс последней последовательности чисел или минуса
+  let lastNumberIndex = inputValue.search(/[\d.-]+$/); // Ищем последовательность цифр или минуса в конце строки
 
-  if (lastNumberIndex >= 0) { // проверяем наличие числа в конце строки
+  if (lastNumberIndex >= 0) { // Есть ли число в конце строки?
     const numberPart = inputValue.slice(lastNumberIndex);
-
-    // Проверяем начало числа на минус
+    
+    // Если число начинается с минуса (-), значит оно отрицательное,
+    // преобразуем его в положительное, убрав минус.
     if (numberPart.startsWith('-')) {
-      // Если число отрицательное, просто уберём минус
       const positiveNumber = numberPart.substring(1);
-
-      // Новый вариант: число остаётся положительным
+      
+      // Собираем новую строку, заменяя старое значение новым положительным числом
       input.value = inputValue.substring(0, lastNumberIndex) + positiveNumber;
       result = inputValue.substring(0, lastNumberIndex) + positiveNumber;
     } else {
-      // Если число положительное, заключаем новое отрицательное число в скобки
-      const negativeNumberInBrackets = `(-${numberPart})`;
-
-      // Замещаем старым значением новый вариант с минусов в скобках
-      input.value = inputValue.substring(0, lastNumberIndex) + negativeNumberInBrackets;
-      result = inputValue.substring(0, lastNumberIndex) + negativeNumberInBrackets;
+      // Число положительное, делаем его отрицательным, добавив минус впереди
+      const negativeNumber = '-' + numberPart;
+      
+      // Собираем новую строку, заменяя старое значение новым отрицательным числом
+      input.value = inputValue.substring(0, lastNumberIndex) + negativeNumber;
+      result = inputValue.substring(0, lastNumberIndex) + negativeNumber;
     }
   }
 });
