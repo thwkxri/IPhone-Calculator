@@ -32,7 +32,7 @@ function endWithOperator(value) {
 AC.addEventListener('click', () => {
   input.value = '';
   result = '';
-  lastAction.textContent = '';
+  lastAction.value = '';
 })
 
 one.addEventListener('click', () => {
@@ -132,7 +132,7 @@ abs.addEventListener('click', () => {
       result = inputValue.substring(0, lastNumberIndex) + negativeNumber;
     }
   }
-});
+})
 
 plus.addEventListener('click', () => {
   if (input.value != 'Ошибка' && !endWithOperator(input.value) && input.value != '') {
@@ -168,15 +168,26 @@ remainder.addEventListener('click', () => {
 })
 
 dot.addEventListener('click', () => {
-  if (input.value != 'Ошибка' && !endWithOperator(input.value) && input.value != '') {
-    input.value += '.';
-    result += '.';
+  if (input.value !== 'Ошибка' && !endWithOperator(input.value) && input.value !== '') {
+    // Извлекаем последнее число из введённой строки
+    const lastNumberMatch = input.value.match(/(\d+(?:\.\d*)?$)/);
+
+    // Если найдено число
+    if (lastNumberMatch) {
+      const lastNumber = lastNumberMatch[0];
+
+      // Проверяем, есть ли точка в последнем числе
+      if (!lastNumber.includes('.')) {
+        input.value += '.';
+        result += '.';
+      }
+    }
   }
 })
 
 ravno.addEventListener('click', (e) => {
   if (input.value != eval(result)) {
-    lastAction.textContent = input.value;
+    lastAction.value = input.value;
   }
 
   if (eval(result) == Infinity) {
