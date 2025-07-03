@@ -1,0 +1,116 @@
+:root {
+  --main-actions: #fc9701;
+  --not-the-main-actions: #a8a8a8;
+  --bnts: #2f2f2f;
+  --bg-color: #000000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  touch-action: pan-x pan-y;
+  -ms-touch-action: pan-x pan-y;
+}
+
+body {
+  background-color: #9fbac7;
+}
+
+.calculate {
+  background-image: url('https://www.artlebedev.com/sunlight/feed/sunlight-feed-content-phone.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg-color);
+  height: 660px;
+  width: 320px;
+  border-radius: 55px;
+}
+
+#last-action {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  text-align: right;
+  right: 27px;
+  top: 170px;
+  font-weight: 400;
+  font-size: 25px;
+  color: var(--not-the-main-actions);
+}
+
+#input {
+  position: absolute;
+  text-align: right;
+  right: 27px;
+  top: 200px;
+  font-size: 54px;
+  background: none;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+#input::placeholder {
+  color: white;
+}
+
+.calculate__btns {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* расстояние между рядами */
+  top: 86%;
+  left: 50%;
+  transform: translate(-50%, -83%);
+}
+
+.row__btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+.btn {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 27px;
+  cursor: pointer;
+  transition: filter .3s ease;
+}
+
+#zero {
+  width: 130px;
+  border-radius: 50px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+#del, #umn, #minus, #plus, #ravno {
+  background-color: var(--main-actions);
+  color: white;
+}
+
+#AC, #remainder, #abs {
+  background-color: var(--not-the-main-actions);
+}
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #dot {
+  background-color: var(--bnts);
+  color: white;
+}
+
+@media(hover:hover) {
+  .btn:hover {
+    filter: brightness(80%);
+  }
+}
