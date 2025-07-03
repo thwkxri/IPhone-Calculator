@@ -25,7 +25,7 @@ const lastAction = document.getElementById('last-action')
 let result = input.value;
 
 function endWithOperator(value) {
-  const operators = ['+', '-', '×', '÷', '.'];
+  const operators = ['+', '-', '×', '÷', '.', '%'];
   return operators.includes(value.slice(-1));
 }
 
@@ -166,6 +166,7 @@ remainder.addEventListener('click', () => {
    if (input.value != 'Ошибка' && !endWithOperator(input.value) && input.value != '') {
     input.value += '%';
     result += '%';
+   }
 })
 
 dot.addEventListener('click', () => {
@@ -199,4 +200,4 @@ ravno.addEventListener('click', (e) => {
     result = endValue;
     input.value = endValue;
   }
-});
+})
