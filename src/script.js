@@ -186,7 +186,7 @@ dot.addEventListener('click', () => {
 })
 
 ravno.addEventListener('click', (e) => {
-  if (input.value != eval(result)) {
+  if (input.value != eval(result) && input.value != 'Ошибка') {
     lastAction.value = input.value;
   }
 
