@@ -25,7 +25,7 @@ const lastAction = document.getElementById('last-action')
 let result = input.value;
 
 function endWithOperator(value) {
-  const operators = ['+', '-', '×', '÷', '.'];
+  const operators = ['+', '-', '×', '÷', '.', '%'];
   return operators.includes(value.slice(-1));
 }
 
