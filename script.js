@@ -166,6 +166,7 @@ remainder.addEventListener('click', () => {
    if (input.value != 'Ошибка' && !endWithOperator(input.value) && input.value != '') {
     input.value += '%';
     result += '%';
+   }
 })
 
 dot.addEventListener('click', () => {
@@ -199,4 +200,4 @@ ravno.addEventListener('click', (e) => {
     result = endValue;
     input.value = endValue;
   }
-});
+})
