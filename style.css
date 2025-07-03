@@ -108,6 +108,7 @@ body {
 
 #AC, #remainder, #abs {
   background-color: var(--not-the-main-actions);
+  color: black;
 }
 
 #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #dot {
