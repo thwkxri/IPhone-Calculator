@@ -163,8 +163,9 @@ umn.addEventListener('click', () => {
 })
 
 remainder.addEventListener('click', () => {
-  input.value += '%';
-  result += '%';
+   if (input.value != 'Ошибка' && !endWithOperator(input.value) && input.value != '') {
+    input.value += '%';
+    result += '%';
 })
 
 dot.addEventListener('click', () => {
