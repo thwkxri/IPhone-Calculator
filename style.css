@@ -39,7 +39,7 @@ body {
   position: absolute;
   text-align: right;
   right: 27px;
-  top: 160px;
+  top: 130px;
   font-weight: 400;
   font-size: 25px;
   color: var(--not-the-main-actions);
@@ -53,14 +53,13 @@ body {
   position: absolute;
   text-align: right;
   right: 27px;
-  top: 200px;
+  top: 170px;
   font-size: 54px;
   background: none;
   color: white;
   border: none;
   outline: none;
   width: 80%;
- 
 }
 
 #input::placeholder {
@@ -72,7 +71,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px; /* расстояние между рядами */
-  top: 86%;
+  top: 550px;
   left: 50%;
   transform: translate(-50%, -83%);
 }
@@ -81,12 +80,12 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  gap: 10px;
+  gap: 5px;
 }
 
 .btn {
-  height: 60px;
-  width: 60px;
+  height: 65px;
+  width: 65px;
   border-radius: 50%;
   border: none;
   font-size: 27px;
@@ -104,11 +103,11 @@ body {
 #del, #umn, #minus, #plus, #ravno {
   background-color: var(--main-actions);
   color: white;
+  font-size: 45px;
 }
 
 #AC, #remainder, #abs {
   background-color: var(--not-the-main-actions);
-  color: black;
 }
 
 #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #dot {
